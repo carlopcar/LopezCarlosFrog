@@ -5,14 +5,17 @@ using UnityEngine;
 public class FrogController : MonoBehaviour
 {
     public float runSpeed = 1.5f;
-    public float jumpSpeed = 3f;
+    public float jumpSpeed = 4f;
 
     Rigidbody2D rb;
 
 
     public bool betterJump = false;
     public float normalJump = 0.5f;
-    public float lowJump = 1f;
+    public float lowJump = 1.5f;
+
+    public SpriteRenderer spriteRenderer;
+    public Animator animator;
 
     void Start()
     {
@@ -25,19 +28,36 @@ public class FrogController : MonoBehaviour
         if (Input.GetKey("right"))
         {
             rb.velocity = new Vector2(runSpeed, rb.velocity.y);
+            spriteRenderer.flipX = false;
+            animator.SetBool("Run", true);
+
         }
         else if (Input.GetKey("left"))
         {
             rb.velocity = new Vector2(-runSpeed, rb.velocity.y);
+            spriteRenderer.flipX = true;
+            animator.SetBool("Run", true);
         }
         else
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
+            animator.SetBool("Run", false);
         }
 
         if (Input.GetKey("space") && CheckGround.isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x , jumpSpeed);
+        }
+
+        if (CheckGround.isGrounded == false)
+        {
+            animator.SetBool("Jump", true);
+            animator.SetBool("Run", false);
+        }
+
+        if (CheckGround.isGrounded == true)
+        {
+            animator.SetBool("Jump", false);
         }
 
         if (betterJump)
