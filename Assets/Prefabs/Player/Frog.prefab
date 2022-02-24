@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2845383179415483712}
   - component: {fileID: 2845383179415483713}
   - component: {fileID: 2845383179415483715}
+  - component: {fileID: 1585919871}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Player
@@ -140,7 +141,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0075987577, y: -0.035639554}
+  m_Offset: {x: 0.0064251423, y: -0.038573414}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -151,7 +152,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14065981, y: 0.22545248}
+  m_Size: {x: 0.12892437, y: 0.21958476}
   m_EdgeRadius: 0
 --- !u!114 &2845383179415483715
 MonoBehaviour:
@@ -171,6 +172,19 @@ MonoBehaviour:
   normalJump: 0.5
   lowJump: 1.5
   spriteRenderer: {fileID: 2845383179415483727}
+  animator: {fileID: 2845383179415483724}
+--- !u!114 &1585919871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2845383179415483725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc65e437b834a246bcd3564247b63af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 2845383179415483724}
 --- !u!1 &2845383179481832022
 GameObject:
