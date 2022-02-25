@@ -41,7 +41,6 @@ public class FrogController : MonoBehaviour
             {
                 if (canDoubleJump)
                 {
-                    animator.SetBool("DoubleJump", true);
                     rb.velocity = new Vector2(rb.velocity.x, doubleJumpSpeed);
                     canDoubleJump = false;
                 }
@@ -57,7 +56,6 @@ public class FrogController : MonoBehaviour
         if (CheckGround.isGrounded == true)
         {
             animator.SetBool("Jump", false); 
-            animator.SetBool("DoubleJump", false);
             animator.SetBool("Falling", false);
         }
 
