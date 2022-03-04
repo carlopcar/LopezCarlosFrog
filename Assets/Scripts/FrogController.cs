@@ -6,9 +6,7 @@ public class FrogController : MonoBehaviour
 {
     public float runSpeed = 1.5f;
     public float jumpSpeed = 4f;
-    public float doubleJumpSpeed = 2f;
-
-    private bool canDoubleJump;
+    
 
     Rigidbody2D rb;
 
@@ -31,21 +29,11 @@ public class FrogController : MonoBehaviour
         {
             if (CheckGround.isGrounded)
             {
-                canDoubleJump = true;
+                
                 rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
             }
         }
-        else
-        {
-            if (Input.GetKeyDown("space"))
-            {
-                if (canDoubleJump)
-                {
-                    rb.velocity = new Vector2(rb.velocity.x, doubleJumpSpeed);
-                    canDoubleJump = false;
-                }
-            }
-        }
+        
 
         if (CheckGround.isGrounded == false)
         {
